@@ -27,12 +27,13 @@ const generateRefreshToken = (userId) => {
 const setRefreshCookie = (res, token) => {
     res.cookie("refreshToken", token, {
         httpOnly: true,
-        secure: config.NODE_ENV === "production",
+        secure: true,
         sameSite: "none",
         path: "/api/auth",
         maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 };
+
 
 const clearRefreshCookie = (res) => {
     res.clearCookie("refreshToken", {
