@@ -28,7 +28,7 @@ const setRefreshCookie = (res, token) => {
     res.cookie("refreshToken", token, {
         httpOnly: true,
         secure: config.NODE_ENV === "production",
-        sameSite: "strict",
+        sameSite: "none",
         path: "/api/auth",
         maxAge: 7 * 24 * 60 * 60 * 1000,
     });
