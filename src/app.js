@@ -16,7 +16,7 @@ app.use(helmet());
 // Allow requests from your frontend
 app.use(
     cors({
-        origin: config.CLIENT_ORIGIN,
+        origin: [config.CLIENT_ORIGIN, "https://chat-gpt-client-9vx2-iota.vercel.app"],
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
